@@ -5,15 +5,14 @@
   --header-height: 3rem;
   /*========== Colors ==========*/
   --hue-color: 206;
-  --black-color: hsl(var(--hue-color), 20%, 4%);
+  --black-color: hsl(var(--hue-color), 4%, 4%);
   --black-color-alt: hsl(var(--hue-color), 4%, 8%);
   --title-color: hsl(var(--hue-color), 4%, 95%);
   --text-color: hsl(var(--hue-color), 4%, 75%);
   --text-color-light: hsl(var(--hue-color), 4%, 65%);
   --white-color: #FFF;
-  --body-color: hsl(var(--hue-color), 4%, 6%);
-  /* one  */
-  --container-color: #8FB0A9;
+  --body-color: hsl(var(--hue-color), 4%, 6%); /*background*/
+  --container-color: hsl(var(--hue-color), 4%, 10%);
   --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 24%), hsl(var(--hue-color), 4%, 8%));
   --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
   --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
@@ -142,8 +141,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color:#8FB0A9;
-  opacity: 0.7;
+  background: transparent;
 }
 
 /*=============== NAV ===============*/
@@ -154,18 +152,10 @@ img {
   align-items: center;
 }
 
-
-.nav__logo img {
-  transform: scale(1.5); /* Adjust the scale factor as needed */
+.nav__logo {
+  display: flex;
+  width: 1.5rem;
 }
-
-/* Ajoutez ceci à votre feuille de style CSS */
-/* Cela masquera le logo lorsque la classe hide-logo est présente */
-.hide-logo {
-  display: none !important;
-}
-
-
 
 .nav__toggle {
   font-size: 1.2rem;
@@ -182,7 +172,6 @@ img {
     width: 100%;
     padding: 4rem 0 3rem;
     transition: .4s;
-    display: none !important;
   }
 }
 
@@ -221,10 +210,6 @@ img {
   cursor: pointer;
 }
 
-.home__container img{
-  transform: scale(1.5); 
-}
-
 /* show menu */
 .show-menu {
   top: 0;
@@ -246,9 +231,8 @@ img {
 /*=============== HOME ===============*/
 .home__img {
   width: 250px;
-  position: relative;
-  margin-top: 20rem;
-  margin-right: 4rem;
+  position: absolute;
+  top: -16rem;
   right: 1.5rem;
 }
 
@@ -288,7 +272,7 @@ img {
   line-height: var(--text-line-height);
 }
 
-.home__price {
+.home__price {    /* 299 $      */
   font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
   margin-left: var(--mb-0-75);
@@ -312,15 +296,15 @@ img {
   font-size: 1.2rem;
 }
 
-.button--flex {
+.button--flex {         /* add to bag button*/
   display: inline-flex;
   align-items: center;
   column-gap: .75rem;
 }
 
 /*=============== SPONSOR ===============*/
-.sponsor__img1 {
-  transform: scale(1.2)
+.sponsor__img {
+  width: 90px;
 }
 
 .sponsor__container {
@@ -330,14 +314,11 @@ img {
   align-items: center;
 }
 
-
 /*=============== SPECS ===============*/
 .specs__container {
   position: relative;
 }
-.case__container img {
-  transform: scale(0.7);
-}
+
 .specs__content {
   row-gap: 1.5rem;
 }
@@ -366,17 +347,16 @@ img {
 }
 
 .specs__img {
+  width: 250px;
   position: absolute;
   top: 2rem;
   right: -4rem;
-  transform: scale(1.5); 
 }
 
 /*=============== CASE ===============*/
 .case__container {
-  transform: scale(1.2);
+  position: relative;
   grid-template-columns: repeat(2, 1fr);
-  
 }
 
 .case__data {
@@ -447,16 +427,10 @@ img {
   top: -3rem;
 }
 
-.products__content  {
-  position:relative;
-  margin-top: 50px;
-  /*align-self: flex-end;*/
+.products__content {
+  align-self: flex-end;
+}
 
-}
-.products__content img{
-  width:100px;
-  height:100px;
-}
 .products__title, .products__price {
   font-size: var(--small-font-size);
 }
@@ -482,8 +456,6 @@ img {
 .footer__logo {
   width: 2rem;
 }
-
-
 
 .footer__title {
   font-size: var(--h3-font-size);
@@ -610,7 +582,7 @@ img {
   }
   .home__img {
     width: 200px;
-    top: 2rem;
+    top: -13rem;
   }
   .home__title {
     top: -4rem;
@@ -782,6 +754,7 @@ img {
   .home__description {
     padding-right: 5rem;
   }
+  /* fb spotify youtube*/
   .sponsor__img {
     width: 100px;
   }
